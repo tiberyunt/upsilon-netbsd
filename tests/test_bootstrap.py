@@ -2,7 +2,7 @@
 """Run the actual GCC-built NetBSD-source probe through ELF/FDT boot."""
 from pathlib import Path
 import json, os, subprocess, tempfile, unittest
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parents[1]
 EMU=Path(os.environ.get('UPSILON_C',Path(os.environ.get('UPSILON_ROOT',ROOT.parent/'upsilon'))/'build/upsilon'))
 class NetBSDBootstrap(unittest.TestCase):
     def test_bootstrap(self):
